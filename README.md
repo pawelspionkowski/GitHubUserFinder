@@ -1,5 +1,4 @@
 # GitHub User Finder
-Circular ProgressBar is a custom control and inplace replacement of 'ProgressBar' for WinForm with animation.
 GitHub User Finder is a simple to use data search application from GitHub. The application is written in 
 
 ### Used programming languages:
