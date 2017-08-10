@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div style="display: none;" class="userDescriptionSpace">
+    <div class="image">
+        <img class="userAvatar" src="">
+    </div>
+    <div class="details">
+        <div class="userName">
+            Name: @Html.Label("Name", " ", new { @class = "userNameLabel" })
+        </div>
+        <div class="userLocation">
+            Location: @Html.Label("Location", " ", new { @class = "userLocationLabel" })
+        </div>
+    </div>
+    <div class="repositories">
+        <div class="repositoriesDescription">Top 5 Repositories:</div>
+        <table class="repositoriesTable">
+            <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Stargazers Count</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="browserSpace">
+    <form class="searchForm">
+        <div class="userNameTextBoxSpace">
+            <label for="userNameTextBox" class="error"></label><br />
+            @Html.TextBox("userNameTextBox", "robconery", new { placeholder = "User Name" })<br />
+        </div>
+        <p><input name="userNameButton" class="userNameButton" data-request-url="@Url.Action("GetUserFromGitHubAsync", "Home")" onclick="app.execute(); return false;" type="submit" value="Find user" /></p>
+    </form>
+</div>
+    <div style="display: none;" id="loadingDiv">
+    </div>
