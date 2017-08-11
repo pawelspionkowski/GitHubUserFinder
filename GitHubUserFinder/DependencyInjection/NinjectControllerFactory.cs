@@ -1,6 +1,8 @@
-﻿using GitHubUserFinder.Source;
+﻿using GitHubUserFinder.Service.GitHub.AbstractWebServiceRepository;
+using GitHubUserFinder.Service.GitHub.WebServiceRepository;
 using Ninject;
 using System;
+using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -25,7 +27,9 @@ namespace GitHubUserFinder.DependencyInjection
 
         private void AddBindings()
         {
-            ninjectKernel.Bind<IRepository>().To<GitHub>().InSingletonScope();
+            ninjectKernel.Bind<IRepository>().To<GitHub>().InSingletonScope()
+            .WithConstructorArgument("_gitHubLoggin", ConfigurationManager.AppSettings["GitHubLoggin"])
+            .WithConstructorArgument("_gitHubPassword", ConfigurationManager.AppSettings["GitHubPassword"]);
         }
     }
 }

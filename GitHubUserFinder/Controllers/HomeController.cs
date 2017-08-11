@@ -1,5 +1,5 @@
-﻿using GitHubUserFinder.Models;
-using GitHubUserFinder.Source;
+﻿using GitHubUserFinder.Domain.Models;
+using GitHubUserFinder.Service.GitHub.AbstractWebServiceRepository;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 

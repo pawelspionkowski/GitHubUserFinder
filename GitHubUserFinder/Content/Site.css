@@ -29,6 +29,7 @@
     background: rgba(49, 152, 33, 0.84);
     border: 5px dotted #000000;
     border-radius: 25px;
+    margin-bottom: 20px;
 }
 
 .userAvatar {

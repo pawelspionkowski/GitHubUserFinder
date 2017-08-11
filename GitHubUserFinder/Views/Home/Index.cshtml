@@ -2,6 +2,15 @@
     ViewBag.Title = "Home";
 }
 
+<div class="browserSpace">
+    <form class="searchForm">
+        <div class="userNameTextBoxSpace">
+            <label for="userNameTextBox" class="error"></label><br />
+            @Html.TextBox("userNameTextBox", "robconery", new { placeholder = "User Name" })<br />
+        </div>
+        <p><input name="userNameButton" class="userNameButton" data-request-url="@Url.Action("GetUserFromGitHubAsync", "Home")" onclick="app.execute(); return false;" type="submit" value="Find user" /></p>
+    </form>
+</div>
 <div style="display: none;" class="userDescriptionSpace">
     <div class="image">
         <img class="userAvatar" src="">
@@ -24,15 +33,6 @@
             </tr>
         </table>
     </div>
-</div>
-<div class="browserSpace">
-    <form class="searchForm">
-        <div class="userNameTextBoxSpace">
-            <label for="userNameTextBox" class="error"></label><br />
-            @Html.TextBox("userNameTextBox", "robconery", new { placeholder = "User Name" })<br />
-        </div>
-        <p><input name="userNameButton" class="userNameButton" data-request-url="@Url.Action("GetUserFromGitHubAsync", "Home")" onclick="app.execute(); return false;" type="submit" value="Find user" /></p>
-    </form>
 </div>
     <div style="display: none;" id="loadingDiv">
     </div>

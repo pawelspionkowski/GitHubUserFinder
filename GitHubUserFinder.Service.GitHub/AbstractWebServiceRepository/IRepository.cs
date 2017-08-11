@@ -1,12 +1,11 @@
-﻿using GitHubUserFinder.Models;
-using Octokit;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GitHubUserFinder.Domain.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GitHubUserFinder.Source
+namespace GitHubUserFinder.Service.GitHub.AbstractWebServiceRepository
 {
     public interface IRepository
     {

@@ -62,10 +62,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GitHubWebService.cs" />
+    <Compile Include="Models\GitHubUserExpectedResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GitHubIntegration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GitHubUserFinder.Domain\GitHubUserFinder.Domain.csproj">
+      <Project>{16e07c53-f422-4acf-98df-18d0c093882f}</Project>
+      <Name>GitHubUserFinder.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubUserFinder.Service.GitHub\GitHubUserFinder.Service.csproj">
+      <Project>{ec3c8188-d3fc-476e-ab39-a700f4443d33}</Project>
+      <Name>GitHubUserFinder.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GitHubUserFinder\GitHubUserFinder.csproj">
       <Project>{629910C5-2DE7-4E8C-A8BE-7AD3C3EDF44C}</Project>
       <Name>GitHubUserFinder</Name>

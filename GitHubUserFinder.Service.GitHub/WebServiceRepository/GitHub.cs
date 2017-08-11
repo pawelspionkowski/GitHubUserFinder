@@ -1,17 +1,28 @@
-﻿using GitHubUserFinder.Models;
+﻿using GitHubUserFinder.Domain.Models;
+using GitHubUserFinder.Service.GitHub.AbstractWebServiceRepository;
 using Octokit;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GitHubUserFinder.Source
+namespace GitHubUserFinder.Service.GitHub.WebServiceRepository
 {
     public class GitHub : IRepository
     {
-        public string gitHubLoggin = ConfigurationManager.AppSettings["GitHubLoggin"];
-        public string gitHubPassword = ConfigurationManager.AppSettings["GitHubPassword"];
+        public GitHub() : this("", "")
+        {
+        }
+
+        public GitHub(string _gitHubLoggin, string _gitHubPassword)
+        {
+            this._gitHubLoggin = _gitHubLoggin;
+            this._gitHubPassword = _gitHubPassword;
+        }
+
+        private string _gitHubLoggin;
+        private string _gitHubPassword;
 
         private async Task<bool> IsUserExist(GitHubClient gitHubClient, string userName)
         {
@@ -99,9 +110,9 @@ namespace GitHubUserFinder.Source
         {
             GitHubClient github = new GitHubClient(new ProductHeaderValue("GitHubUserFinder"));
 
-            if (gitHubLoggin != "" && gitHubPassword != "")
+            if (_gitHubLoggin != "" && _gitHubPassword != "")
             {
-                Credentials basicAuth = new Credentials(gitHubLoggin, gitHubPassword);
+                Credentials basicAuth = new Credentials(_gitHubLoggin, _gitHubPassword);
                 github.Credentials = basicAuth;
             }
             return github;

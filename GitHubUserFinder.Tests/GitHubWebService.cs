@@ -1,17 +1,18 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GitHubUserFinder.Source;
 using Octokit;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using FluentAssertions;
+using GitHubUserFinder.Service.GitHub.WebServiceRepository;
+using System.Configuration;
 
 namespace GitHubUserFinder.Tests
 {
     [TestClass]
     public class GitHubWebService
     {
-        private GitHub _gitHub = new GitHub();
+        private GitHub _gitHub = new GitHub(ConfigurationManager.AppSettings["GitHubLoggin"], ConfigurationManager.AppSettings["GitHubPassword"]);
         private GitHubClient _gitHubClient;
 
         [TestInitialize]
@@ -32,9 +33,9 @@ namespace GitHubUserFinder.Tests
             
             Action a = () => output.Wait();
             a.ShouldNotThrow<Exception>();
-
-            Assert.IsNotNull(output.Result);
-            Assert.AreEqual(output.Result.Login, gitHubUserName);
+            
+            output.Result.Should().NotBeNull();
+            output.Result.Login.Should().Equals(gitHubUserName);
         }
         
         [TestMethod]
@@ -46,7 +47,7 @@ namespace GitHubUserFinder.Tests
             Action a = () => output.Wait();
 
             a.ShouldThrow<Exception>();
-            Assert.IsNotNull(output.Exception);
+            output.Exception.Should().NotBeNull();
         }
 
         [TestMethod]
@@ -58,7 +59,7 @@ namespace GitHubUserFinder.Tests
             Action a = () => output.Wait();
 
             a.ShouldNotThrow<Exception>();
-            Assert.IsNotNull(output.Result);
+            output.Result.Should().NotBeNull();
         }
         
         [TestMethod]
@@ -70,7 +71,7 @@ namespace GitHubUserFinder.Tests
             Action a = () => output.Wait();
 
             a.ShouldThrow<Exception>();
-            Assert.IsNotNull(output.Exception);
+            output.Exception.Should().NotBeNull();
         }
     }
 }

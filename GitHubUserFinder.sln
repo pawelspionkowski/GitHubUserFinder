@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\Users\paspi1\Downloads\CircularProgressBar-master\README.md = ..\..\Users\paspi1\Downloads\CircularProgressBar-master\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubUserFinder.Service", "GitHubUserFinder.Service.GitHub\GitHubUserFinder.Service.csproj", "{EC3C8188-D3FC-476E-AB39-A700F4443D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubUserFinder.Domain", "GitHubUserFinder.Domain\GitHubUserFinder.Domain.csproj", "{16E07C53-F422-4ACF-98DF-18D0C093882F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{FC476D1B-EF6F-4CD4-9AB0-ABF45BE7F3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC476D1B-EF6F-4CD4-9AB0-ABF45BE7F3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC476D1B-EF6F-4CD4-9AB0-ABF45BE7F3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3C8188-D3FC-476E-AB39-A700F4443D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3C8188-D3FC-476E-AB39-A700F4443D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3C8188-D3FC-476E-AB39-A700F4443D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3C8188-D3FC-476E-AB39-A700F4443D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E07C53-F422-4ACF-98DF-18D0C093882F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E07C53-F422-4ACF-98DF-18D0C093882F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E07C53-F422-4ACF-98DF-18D0C093882F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E07C53-F422-4ACF-98DF-18D0C093882F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
