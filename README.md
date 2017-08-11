@@ -9,7 +9,7 @@ GitHub User Finder is a simple to use data search application from GitHub. The a
 - Ninject
 - jQuery
 - Octokit
-- FlientAssertions
+- FluentAssertions
 - jQuery.validate
 - .Net MVC
 
